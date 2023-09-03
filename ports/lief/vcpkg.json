@@ -3,7 +3,6 @@
   "version": "0.13.2",
   "description": "LIEF - Library to Instrument Executable Formats",
   "homepage": "https://github.com/lief-project/LIEF",
-  "license": "Apache License 2.0",
   "supports": "!windows & !osx & !android",
   "dependencies": [
     {
