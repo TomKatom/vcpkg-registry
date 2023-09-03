@@ -4,7 +4,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO lief-project/LIEF
     REF 2d9855fc7f9d4ce6325245f8b75c98eb7663db60 #0.13.2
-    SHA512 0
+    SHA512 021e0560e899899ec91375d38a4c5877d32415e82d3d3bfa34fc1fc60106dedf1a5d0a1764d2a3a236acf8b5c7756e9e6e40cf86c9089d0aacd11f6f9ecc9b72
     HEAD_REF master
 )
 
