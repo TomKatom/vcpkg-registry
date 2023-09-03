@@ -1,0 +1,38 @@
+vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
+
+vcpkg_from_github(
+    OUT_SOURCE_PATH SOURCE_PATH
+    REPO lief-project/LIEF
+    REF 2d9855fc7f9d4ce6325245f8b75c98eb7663db60 #0.13.2
+    HEAD_REF master
+)
+
+vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
+    FEATURES
+        json LIEF_ENABLE_JSON
+        frozen LIEF_FROZEN_ENABLED
+)
+
+vcpkg_cmake_configure(
+    SOURCE_PATH "${SOURCE_PATH}"
+    OPTIONS 
+        -DLIEF_OPT_MBEDTLS_EXTERNAL=TRUE
+        -DLIEF_OPT_NLOHMANN_JSON_EXTERNAL=TRUE
+        -DLIEF_OPT_FROZEN_EXTERNAL=TRUE
+        -DLIEF_EXTERNAL_EXPECTED=TRUE
+        -DLIEF_OPT_UTFCPP_EXTERNAL=TRUE
+        -DLIEF_SANITIZER=OFF
+        -DLIEF_FUZZING=OFF
+        -DLIEF_PROFILING=OFF
+        -DLIEF_EXAMPLES=OFF
+        -LIEF_TESTS=OFF
+        -LIEF_DOC=OFF
+        -LIEF_INSTALL=ON
+        ${FEATURE_OPTIONS}
+    OPTIONS_DEBUG
+        -DDISABLE_INSTALL_HEADERS=ON
+)
+
+vcpkg_cmake_install()
+
+vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
