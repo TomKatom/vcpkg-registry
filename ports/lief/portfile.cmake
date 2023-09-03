@@ -26,12 +26,10 @@ vcpkg_cmake_configure(
         -DLIEF_FUZZING=OFF
         -DLIEF_PROFILING=OFF
         -DLIEF_EXAMPLES=OFF
-        -LIEF_TESTS=OFF
-        -LIEF_DOC=OFF
-        -LIEF_INSTALL=ON
+        -DLIEF_TESTS=OFF
+        -DLIEF_DOC=OFF
+        -DLIEF_INSTALL=ON
         ${FEATURE_OPTIONS}
-    OPTIONS_DEBUG
-        -DDISABLE_INSTALL_HEADERS=ON
 )
 
 vcpkg_cmake_install()
